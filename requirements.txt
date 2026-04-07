@@ -1,0 +1,7 @@
+streamlit
+yfinance
+transformers
+torch
+torchvision
+plotly
+python-dotenv
