@@ -4,9 +4,9 @@ import plotly.graph_objects as go
 from transformers import pipeline
 
 # --- PAGE SETUP ---
-st.set_page_config(page_title="AI Financial Analyzer", page_icon="📈", layout="wide")
+st.set_page_config(page_title="EquiSense", page_icon="📈", layout="wide")
 st.title("📈 EquiSense-The Real Time Market Analyzer")
-st.write("Select an asset to view its recent price action and analyze today's news using an NLP Transformer.")
+st.write("Select an asset to view its recent price action and analyze today's news.")
 
 # --- LOAD AI BRAIN ---
 @st.cache_resource
