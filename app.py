@@ -124,6 +124,23 @@ if st.button(f"Analyze {ticker}"):
                     # st.metric makes a large, beautiful dashboard number!
                     st.metric(label="Bullish Sentiment Score", value=f"{bullish_percent:.1f}%")
                     st.write(f"*Analyzed {total} recent financial articles.*")
+                    
+                    # --- NEW: DISPLAY TOP 5 HEADLINES ---
+                    st.divider()
+                    st.markdown("### 📰 Latest Headlines")
+                    
+                    # Show the first 5 articles with their individual sentiment colors
+                    for headline in real_headlines[:5]:
+                        result = sentiment_analyzer(headline)[0]
+                        label = result['label'].upper()
+                        
+                        if label == "POSITIVE":
+                            st.success(f"{headline}")
+                        elif label == "NEGATIVE":
+                            st.error(f"{headline}")
+                        else:
+                            st.info(f"{headline}")
+
                 else:
                     bullish_percent = 50
                     st.info("Mostly neutral news recently.")
